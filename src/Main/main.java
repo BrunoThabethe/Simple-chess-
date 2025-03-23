@@ -1,30 +1,30 @@
 package Main;
+
 import javax.swing.JFrame;
 
 public class main {
+    public static void main(String[] args) {
+        // Creating a window
+        JFrame window = new JFrame("Simple Chess Game");
 
- public static void main (String[]args){
-    // creating a window
- JFrame window = new JFrame("Simple Chess Game");
+        // When closing the window, it also shuts down the program
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
- //whwn closing the window it also shut down the program 
- window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Cannot resize the window
+        window.setResizable(false);
 
- //can not resize the window
- window.setResizable(false);
+        // Adding the Game Panel to the window
+        GamePanel gp = new GamePanel();  // Ensure this class is properly defined
+        window.add(gp);
+        window.pack();
 
- //adding the Game Panel to the window
- GamePanel gp = new GamePanel();
- window.add (gp);
- window.pack();
+        // Window will show up in the center
+        window.setLocationRelativeTo(null);
 
- //window will show up only in the center 
- window.setLocationRelativeTo(null);
- // so we can see the Jframe window 
- window.setVisible(true);
+        // So we can see the JFrame window
+        window.setVisible(true);
 
- gp.LaunchGame();
-
-
- }
+        // Launch the game (Ensure GamePanel has this method)
+        gp.LaunchGame();
+    }
 }
